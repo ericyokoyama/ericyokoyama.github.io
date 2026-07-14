@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -196,3 +195,180 @@ footer{
 </head>
 <body>
 
+<section class="hero">
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="badge">Disponível para novos desafios e projetos</div>
+
+            <h1>
+                Olá, eu sou<br>
+                <span class="gradient">Eric Kenji Yokoyama</span>
+            </h1>
+
+            <div class="subtitle">
+                Analista Pleno de Pricing • Atuário
+            </div>
+
+            <p class="description">
+                Tenho 30 anos e construí minha carreira no mercado segurador,
+                atuando há mais de 8 anos na equipe de Pricing da HDI.
+                Sou apaixonado por análise de dados, modelagem estatística,
+                estratégias de precificação e soluções que transformam números
+                em decisões inteligentes.
+            </p>
+
+            #sobre
+                Conheça minha trajetória
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="sobre">
+
+    <div class="container">
+
+        <h2 class="section-title fade">
+            Quem Sou
+        </h2>
+
+        <div class="timeline fade">
+
+            <p>
+                Meu nome é Eric Kenji Yokoyama, atuário e profissional da área de Pricing.
+                Atualmente atuo como <strong>Analista Pleno</strong>, desenvolvendo análises,
+                estudos e modelos para apoiar decisões estratégicas de negócio.
+                Minha experiência está concentrada na interseção entre estatística,
+                seguros, tecnologia e inteligência analítica.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title fade">
+            Especialidades
+        </h2>
+
+        <div class="grid">
+
+            <div class="card fade">
+                <h3>📊 Pricing</h3>
+                <p>
+                    Desenvolvimento e avaliação de estratégias de precificação
+                    para maximização de resultados.
+                </p>
+            </div>
+
+            <div class="card fade">
+                <h3>📈 Analytics</h3>
+                <p>
+                    Transformação de dados em insights para suporte
+                    à tomada de decisão.
+                </p>
+            </div>
+
+            <div class="card fade">
+                <h3>⚙️ Modelagem</h3>
+                <p>
+                    Aplicação de técnicas estatísticas e atuariais
+                    em cenários complexos de negócio.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title fade">
+            Portfólio Profissional
+        </h2>
+
+        <div class="grid">
+
+            <div class="card fade">
+                <h3>🚀 Projetos de Pricing</h3>
+                <p>
+                    Participação em iniciativas voltadas para otimização
+                    de rentabilidade e competitividade.
+                </p>
+            </div>
+
+            <div class="card fade">
+                <h3>📉 Estudos Analíticos</h3>
+                <p>
+                    Construção de análises para avaliação de desempenho,
+                    comportamento e tendências.
+                </p>
+            </div>
+
+            <div class="card fade">
+                <h3>💡 Automação</h3>
+                <p>
+                    Desenvolvimento de processos e soluções para ganho
+                    de eficiência operacional.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 • Eric Kenji Yokoyama
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+
+    });
+
+},{
+    threshold:0.15
+});
+
+document.querySelectorAll(".fade").forEach(el => {
+    observer.observe(el);
+});
+
+document.querySelector(".badge").animate(
+[
+    { transform:"translateY(0px)" },
+    { transform:"translateY(-6px)" },
+    { transform:"translateY(0px)" }
+],
+{
+    duration:3000,
+    iterations:Infinity
+}
+);
+
+</script>
+
+</body>
+</html>
