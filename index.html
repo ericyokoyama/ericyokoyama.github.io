@@ -8,13 +8,14 @@
 <title>Eric Kenji Yokoyama</title>
 
 <style>
+
 :root{
-    --primary:#1d4ed8;
-    --primary-light:#3b82f6;
-    --dark:#0f172a;
-    --text:#334155;
-    --bg:#f8fafc;
-    --white:#ffffff;
+    --bg:#050816;
+    --card:#0f172a;
+    --blue:#3b82f6;
+    --blue-light:#60a5fa;
+    --text:#f8fafc;
+    --text-soft:#94a3b8;
 }
 
 *{
@@ -28,139 +29,162 @@ html{
 }
 
 body{
-    font-family:"Segoe UI",sans-serif;
+    font-family:'Segoe UI',sans-serif;
     background:var(--bg);
     color:var(--text);
-    line-height:1.6;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,rgba(59,130,246,.2),transparent 70%);
+    top:-250px;
+    right:-150px;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,rgba(96,165,250,.15),transparent 70%);
+    bottom:-200px;
+    left:-100px;
+    z-index:-1;
 }
 
 .container{
-    width:90%;
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
-}
-
-header{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    background:linear-gradient(135deg,#ffffff 0%,#eff6ff 100%);
+    padding:0 30px;
 }
 
 .hero{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
+    min-height:100vh;
+    display:flex;
     align-items:center;
 }
 
-.hero h1{
-    font-size:3.5rem;
-    color:var(--dark);
-    margin-bottom:10px;
+.hero-content{
+    max-width:800px;
 }
 
-.hero h2{
-    font-size:1.3rem;
-    font-weight:500;
-    color:var(--primary);
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:1.1rem;
+.badge{
+    display:inline-block;
+    padding:8px 18px;
+    border:1px solid rgba(96,165,250,.3);
+    border-radius:999px;
+    background:rgba(59,130,246,.08);
+    color:var(--blue-light);
     margin-bottom:25px;
+}
+
+h1{
+    font-size:clamp(3rem,8vw,6rem);
+    line-height:1;
+    margin-bottom:15px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#ffffff,#60a5fa);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    font-size:1.4rem;
+    color:var(--blue-light);
+    margin-bottom:25px;
+}
+
+.description{
+    color:var(--text-soft);
+    font-size:1.1rem;
+    line-height:1.8;
+    max-width:700px;
+    margin-bottom:35px;
 }
 
 .btn{
     display:inline-block;
-    padding:14px 24px;
-    background:var(--primary);
+    background:linear-gradient(135deg,var(--blue),var(--blue-light));
     color:white;
     text-decoration:none;
-    border-radius:10px;
+    padding:14px 26px;
+    border-radius:12px;
     transition:.3s;
 }
 
 .btn:hover{
-    background:var(--primary-light);
-    transform:translateY(-2px);
-}
-
-.profile-card{
-    background:white;
-    padding:40px;
-    border-radius:24px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.08);
-    text-align:center;
-}
-
-.avatar{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    margin:auto;
-    background:linear-gradient(135deg,var(--primary),var(--primary-light));
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
-    font-size:48px;
-    font-weight:bold;
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(59,130,246,.3);
 }
 
 section{
-    padding:90px 0;
+    padding:100px 0;
 }
 
 .section-title{
-    text-align:center;
     font-size:2.2rem;
-    color:var(--dark);
-    margin-bottom:50px;
+    margin-bottom:40px;
+    text-align:center;
 }
 
-.cards{
+.grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
 }
 
 .card{
-    background:white;
+    background:rgba(15,23,42,.7);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
     padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
-    transition:.3s;
+    backdrop-filter:blur(10px);
+    transition:.35s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-8px);
+    border-color:rgba(96,165,250,.4);
 }
 
 .card h3{
-    color:var(--primary);
-    margin-bottom:10px;
+    margin-bottom:12px;
+    color:#fff;
 }
 
-.about{
+.card p{
+    color:var(--text-soft);
+}
+
+.timeline{
     max-width:800px;
     margin:auto;
     text-align:center;
+}
+
+.timeline p{
+    color:var(--text-soft);
     font-size:1.1rem;
+    line-height:1.9;
 }
 
 footer{
-    background:var(--dark);
-    color:white;
+    padding:50px 20px;
     text-align:center;
-    padding:40px 20px;
+    color:#64748b;
 }
 
 .fade{
     opacity:0;
-    transform:translateY(20px);
-    transition:all 1s ease;
+    transform:translateY(30px);
+    transition:1s;
 }
 
 .fade.show{
@@ -168,161 +192,7 @@ footer{
     transform:translateY(0);
 }
 
-@media(max-width:900px){
-
-.hero{
-    grid-template-columns:1fr;
-    text-align:center;
-}
-
-.hero h1{
-    font-size:2.5rem;
-}
-
-}
 </style>
 </head>
 <body>
 
-<header>
-    <div class="container hero">
-
-        <div>
-            <h1>Eric Kenji Yokoyama</h1>
-            <h2>Atuário • Pricing • Seguros</h2>
-
-            <p>
-                Profissional apaixonado por análise de dados,
-                modelagem estatística e desenvolvimento de soluções
-                para tomada de decisão no mercado segurador.
-            </p>
-
-            #sobre
-                Conheça minha trajetória
-            </a>
-        </div>
-
-        <div class="profile-card">
-            <div class="avatar">E</div>
-
-            <h3 style="margin-top:20px;">30 anos</h3>
-
-            <p>
-                Atuário formado e especialista em Pricing,
-                com sólida experiência no mercado de seguros.
-            </p>
-        </div>
-
-    </div>
-</header>
-
-<section id="sobre">
-    <div class="container">
-        <h2 class="section-title fade">Sobre Mim</h2>
-
-        <div class="about fade">
-            Meu nome é <strong>Eric Kenji Yokoyama</strong>.
-            Tenho 30 anos e atuo há mais de 8 anos na equipe de
-            <strong>Pricing da HDI</strong>.
-            Minha trajetória profissional é marcada pelo uso de dados,
-            estatística e modelagem para apoiar estratégias de precificação,
-            sempre buscando unir precisão analítica com geração de valor para o negócio.
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-
-        <h2 class="section-title fade">Experiência & Especialidades</h2>
-
-        <div class="cards">
-
-            <div class="card fade">
-                <h3>📊 Pricing</h3>
-                <p>
-                    Desenvolvimento de análises e modelos para suporte
-                    às estratégias de precificação.
-                </p>
-            </div>
-
-            <div class="card fade">
-                <h3>📈 Analytics</h3>
-                <p>
-                    Transformação de dados em informação para tomada
-                    de decisão baseada em evidências.
-                </p>
-            </div>
-
-            <div class="card fade">
-                <h3>⚙️ Modelagem</h3>
-                <p>
-                    Aplicação de métodos estatísticos e atuariais para
-                    otimização de resultados.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<section>
-    <div class="container">
-
-        <h2 class="section-title fade">Portfólio</h2>
-
-        <div class="cards">
-
-            <div class="card fade">
-                <h3>Dashboards Executivos</h3>
-                <p>
-                    Construção de indicadores e painéis para monitoramento
-                    de performance e resultados.
-                </p>
-            </div>
-
-            <div class="card fade">
-                <h3>Projetos de Pricing</h3>
-                <p>
-                    Participação em iniciativas de modelagem e avaliação de
-                    impacto para produtos seguradores.
-                </p>
-            </div>
-
-            <div class="card fade">
-                <h3>Automação e Eficiência</h3>
-                <p>
-                    Desenvolvimento de processos e análises que aumentam
-                    produtividade e qualidade das entregas.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<footer>
-    <h3>Eric Kenji Yokoyama</h3>
-    <p>Atuário • Pricing • Analytics</p>
-</footer>
-
-<script>
-
-const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-    });
-},{threshold:0.15});
-
-document.querySelectorAll('.fade').forEach(el=>{
-    observer.observe(el);
-});
-
-</script>
-
-</body>
-</html>
